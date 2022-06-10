@@ -38,6 +38,7 @@ body {
 .menu h1 {
     font-size: 26px;
     margin-bottom:17px ;
+    margin-left: 19px;
 }
 .caixa-do-menu {
     overflow-x: scroll;
@@ -48,9 +49,38 @@ body {
     margin-left: 16px;
     width: 172px;
     height: 216px;
+    padding: 18px 14px 13px 14px;
     border-radius: 9px;
     margin-bottom: 27px;
     background-color: #FFFFFF;
+}
+.item img {
+    width: 144px;
+    height: 87px;
+    margin-bottom: 8px;
+}
+.nome-item {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #333333;
+    margin-bottom: 6px;
+}
+.descrição-item {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #A6A6A6;
+    margin-bottom: 6px;
+}
+.preço-item {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #000000;
+}
+.sobremesa {
+    margin-bottom: 80px;
 }
 .baixo {
     position: fixed;
