@@ -10,6 +10,10 @@ p {
 body {
     background-color:  #E5E5E5;
 }
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
 .topo {
     position: fixed;
     top: 0;
@@ -132,10 +136,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.info p{
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     color: #FFFFFF;
+}
+.verde {
+    background-color: #32B72F;
 }
