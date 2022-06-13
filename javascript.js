@@ -1,16 +1,3 @@
-const frango = 14.90
-const lasanha = 17.90
-const parmegiana = 19.90
-const feijoada = 16.90
-const coca = 4.90
-const guarana = 4.50
-const cajuina = 2.90
-const fanta = 4.80
-const pudim = 7.90
-const sorvete = 8.90
-const bolo = 5.90
-const mousse = 9.90
-
 let verificarprato;
 let verifcarbebida;
 let verifcarsobremesa;
@@ -24,7 +11,7 @@ let precosobremesa;
 let mensagem;
 let mensagemURL;
 
- function pratoescolhido(escolhido){
+ function pratoescolhido(escolhido, valor){
     const itemclicado = document.querySelector(".prato .selecionado") 
     const verificarbotão = document.querySelector(".prato .selecionado .icone") 
     if (itemclicado !== null) { 
@@ -37,10 +24,11 @@ let mensagemURL;
     const buscarnome = document.querySelector(".prato .selecionado .nome-item")
     const buscarpreco = document.querySelector(".prato .selecionado .preço-item")
     nomeprato = buscarnome.innerHTML
-    precoprato = buscarpreco.innerHTML
     verificarprato = "ok"
+    precoprato = valor
     if ((verificarprato === "ok") && (verifcarbebida === "ok") && (verifcarsobremesa === "ok")) {
-        mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomeprato} \n - Bebida: ${nomebebida} \n - Sobremesa: ${nomesobremesa} \n Total: R$ 27.70`
+        const valorfinal = (precoprato + precobebida + precosobremesa).toFixed(2)
+        mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${nomeprato}\n- Bebida: ${nomebebida}\n- Sobremesa: ${nomesobremesa}\nTotal: R$ ${valorfinal}`
         mensagemURL = encodeURIComponent(mensagem)
         const enviarpedido = `https://wa.me/+5588999638133?text=${mensagemURL}`
         const link = document.querySelector(".baixo")
@@ -48,7 +36,7 @@ let mensagemURL;
         Fechar pedido </div></a>`
     }
  }  
- function bebidaescolhida(escolhido){
+ function bebidaescolhida(escolhido, valor){
     const itemclicado = document.querySelector(".bebida .selecionado")
     const verificarbotão = document.querySelector(".bebida .selecionado .icone") 
     if (itemclicado !== null) {
@@ -61,10 +49,11 @@ let mensagemURL;
     const buscarnome = document.querySelector(".bebida .selecionado .nome-item")
     const buscarpreco = document.querySelector(".bebida .selecionado .preço-item")
     nomebebida = buscarnome.innerHTML
-    precobebida = buscarpreco.innerHTML
     verifcarbebida = "ok"
+    precobebida = valor
     if ((verificarprato === "ok") && (verifcarbebida === "ok") && (verifcarsobremesa === "ok")) {
-        mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomeprato} \n - Bebida: ${nomebebida} \n - Sobremesa: ${nomesobremesa} \n Total: R$ 27.70`
+        const valorfinal = (precoprato + precobebida + precosobremesa).toFixed(2)
+        mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${nomeprato}\n- Bebida: ${nomebebida}\n- Sobremesa: ${nomesobremesa}\nTotal: R$ ${valorfinal}`
         mensagemURL = encodeURIComponent(mensagem)
         const enviarpedido = `https://wa.me/+5588999638133?text=${mensagemURL}`
         const link = document.querySelector(".baixo")
@@ -72,7 +61,7 @@ let mensagemURL;
         Fechar pedido </div></a>`
     }  
  }
- function sobremesaescolhida(escolhido){
+ function sobremesaescolhida(escolhido, valor){
     const itemclicado = document.querySelector(".sobremesa .selecionado")
     const verificarbotão = document.querySelector(".sobremesa .selecionado .icone") 
     if (itemclicado !== null) {
@@ -87,8 +76,10 @@ let mensagemURL;
     nomesobremesa = buscarnome.innerHTML
     precosobremesa = buscarpreco.innerHTML
     verifcarsobremesa = "ok"   
+    precosobremesa = valor
     if ((verificarprato === "ok") && (verifcarbebida === "ok") && (verifcarsobremesa === "ok")) {
-        mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomeprato} \n - Bebida: ${nomebebida} \n - Sobremesa: ${nomesobremesa} \n Total: R$ 27.70`
+        const valorfinal = (precoprato + precobebida + precosobremesa).toFixed(2)
+        mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${nomeprato}\n- Bebida: ${nomebebida}\n- Sobremesa: ${nomesobremesa}\nTotal: R$ ${valorfinal}`
         mensagemURL = encodeURIComponent(mensagem)
         const enviarpedido = `https://wa.me/+5588999638133?text=${mensagemURL}`
         const link = document.querySelector(".baixo")
